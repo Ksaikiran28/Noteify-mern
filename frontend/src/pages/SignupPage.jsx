@@ -22,7 +22,10 @@ const SignupPage = () => {
       });
       console.log(response.data);
       navigate("/");
-      toast.success("Signup successful");
+      toast.success("Signup successful,Please log in ",{
+          duration:30000,
+      });
+      navigate("/login");
     } catch (error) {
       console.error("Signup failed:", error.response?.data || error.message);
       toast.error(error.response?.data?.message || "Signup failed");
